@@ -1,0 +1,16 @@
+# Compiled server (build with install.sh, or see the README)
+/server/journal-server
+/journal-server
+
+# Leftovers from the old Go version, in case they're still on disk
+/server/journal-summarize
+/summarizer/
+
+# Journal data lives in ~/browsing-journal, but never let it into the repo by accident
+*.jsonl
+
+# Generated Safari app and Xcode project
+/safari/build/
+
+# macOS
+.DS_Store

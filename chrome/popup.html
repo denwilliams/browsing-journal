@@ -1,0 +1,23 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 13px system-ui, sans-serif; width: 280px; margin: 12px; }
+  label { display: block; margin: 10px 0 2px; font-weight: 600; }
+  small { display: block; color: gray; margin-bottom: 4px; }
+  textarea { width: 100%; box-sizing: border-box; height: 90px; font: 12px ui-monospace, monospace; }
+  #status { margin-top: 10px; color: gray; }
+</style>
+<label><input type="checkbox" id="paused"> Pause logging</label>
+
+<label for="blocklist">Never log</label>
+<small>One site per line. Includes subdomains.</small>
+<textarea id="blocklist" spellcheck="false"></textarea>
+
+<label for="metadataOnly">Log time only</label>
+<small>Recorded, but the page is never read or summarised.</small>
+<textarea id="metadataOnly" spellcheck="false"></textarea>
+
+<div id="status">Checking server…</div>
+<script src="shared.js"></script>
+<script src="popup.js"></script>

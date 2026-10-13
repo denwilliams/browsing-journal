@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.den.browsing-journal</string>
+  <key>ProgramArguments</key>
+  <!-- install.sh puts the binaries in ~/.local/bin, so this doesn't depend on where the repo is.
+       launchd doesn't expand $HOME itself, so a shell does; exec keeps the server as the tracked process. -->
+  <array>
+    <string>/bin/sh</string>
+    <string>-c</string>
+    <string>exec "$HOME/.local/bin/journal-server" 2&gt;&gt;"$HOME/Library/Logs/browsing-journal.log"</string>
+  </array>
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+  <key>ProcessType</key>
+  <string>Interactive</string>
+  <key>ThrottleInterval</key>
+  <integer>5</integer>
+</dict>
+</plist>

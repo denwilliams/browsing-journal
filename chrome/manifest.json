@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Browsing Journal",
+  "version": "0.1.0",
+  "description": "Logs pages you actually spend time on (window focused, not idle) to a local journal.",
+  "permissions": ["tabs", "idle", "storage", "alarms", "scripting"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "Browsing Journal" }
+}
